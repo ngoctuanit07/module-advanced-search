@@ -1,6 +1,10 @@
-## Synopsis
+## Introduction
+Advance search module base on magento 2. Integration Apache Solr search engine
+## Requirement
+Apache Solr runs on Java 8 or greater.
 
-This most basic skeleton module for Magento 2.
+## Install
+
 
 ## Tests
 
