@@ -3,8 +3,11 @@ Advance search module base on magento 2. Integration Apache Solr search engine
 ## Requirement
 Apache Solr runs on Java 8 or greater.
 
-## Install
-
+## Getting started
+The preferred way to install Advance Search module is by using Composer. Advance Search module is available on Packagist.
+```
+composer require magetut/advance-search
+```
 
 ## Tests
 
