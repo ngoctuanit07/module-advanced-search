@@ -1,6 +1,6 @@
 {
-  "name": "magetut/advance-search",
-  "description": "N/A",
+  "name": "magetut/advanced-search",
+  "description": "Advanced search module base on Magento 2. Integration Apache Solr search engine",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
@@ -23,7 +23,7 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Magetut\\AdvanceSearch\\": ""
+      "Magetut\\AdvancedSearch\\": ""
     }
   }
 }
