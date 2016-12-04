@@ -1,5 +1,5 @@
 {
-  "name": "magetut/advanced-search",
+  "name": "magetut/module-advanced-search",
   "description": "Advanced search module base on Magento 2. Integration Apache Solr search engine",
   "license": [
     "OSL-3.0",
