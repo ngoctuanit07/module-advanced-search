@@ -11,5 +11,5 @@ namespace Magento\Solr\Model\Adapter;
  */
 class Solarium extends \Magento\Solr\Model\Adapter\AbstractAdapter
 {
-    
+
 }

@@ -34,4 +34,5 @@
             </argument>
         </arguments>
     </type>
+    <preference for="Magetut\AdvancedSearch\Model\AdapterFactoryInterface" type="Magetut\AdvancedSearch\Model\SolariumFactory" />
 </config>
