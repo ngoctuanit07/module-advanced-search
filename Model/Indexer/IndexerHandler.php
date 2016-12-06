@@ -5,54 +5,60 @@
  */
 namespace Magetut\AdvancedSearch\Model\Indexer;
 
-use Magento\Eav\Model\Config;
-use Magento\Framework\App\ResourceConnection;
-use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\Indexer\SaveHandler\IndexerInterface;
-use Magento\Framework\Indexer\IndexStructureInterface;
-use Magento\Framework\Search\Request\Dimension;
-use Magento\Framework\Search\Request\IndexScopeResolverInterface;
-use Magento\Framework\Indexer\SaveHandler\Batch;
-use Magento\Framework\Indexer\ScopeResolver\IndexScopeResolver;
+use Magetut\AdvancedSearch\Model\Adapter\Solarium;
 
 class IndexerHandler implements IndexerInterface
 {
-    private $indexStructure;
+    /**
+     * @var Solarium
+     */
+    private $adapter;
 
+    /**
+     * @var array
+     */
     private $data;
 
-    private $fields;
-
-    private $resource;
-
+    /**
+     * @var \Magento\Framework\Indexer\SaveHandler\Batch
+     */
     private $batch;
 
-    private $eavConfig;
-
+    /**
+     * @var int
+     */
     private $batchSize;
 
-    private $indexScopeResolver;
-
+    /**
+     * IndexerHandler constructor.
+     * @param \Magetut\AdvancedSearch\Model\AdapterFactoryInterface $adapterFactory
+     * @param \Magento\Framework\Indexer\SaveHandler\Batch $batch
+     * @param array $data
+     * @param int $batchSize
+     */
     public function __construct(
-        Batch $batch,
-        array $data,
-        $batchSize = 50
+        \Magetut\AdvancedSearch\Model\AdapterFactoryInterface $adapterFactory,
+        \Magento\Framework\Indexer\SaveHandler\Batch $batch,
+        array $data = [],
+        $batchSize = 500
     ) {
-        $this->batch = $batch;
+        $this->adapter = $adapterFactory->createAdapter();
         $this->data = $data;
+        $this->batch = $batch;
         $this->batchSize = $batchSize;
     }
 
     public function saveIndex($dimensions, \Traversable $documents)
     {
-        foreach ($this->batch->getItems($documents, $this->batchSize) as $batchDocuments) {
+        foreach ($this->batch->getItems($documents, $this->batchSize) as $documentsBatch) {
 
         }
     }
 
     public function deleteIndex($dimensions, \Traversable $documents)
     {
-        foreach ($this->batch->getItems($documents, $this->batchSize) as $batchDocuments) {
+        foreach ($this->batch->getItems($documents, $this->batchSize) as $documentsBatch) {
 
         }
     }
