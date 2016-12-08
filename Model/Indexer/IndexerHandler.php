@@ -51,9 +51,7 @@ class IndexerHandler implements IndexerInterface
 
     public function saveIndex($dimensions, \Traversable $documents)
     {
-        foreach ($this->batch->getItems($documents, $this->batchSize) as $documentsBatch) {
-
-        }
+        $this->adapter->ping();
     }
 
     public function deleteIndex($dimensions, \Traversable $documents)
